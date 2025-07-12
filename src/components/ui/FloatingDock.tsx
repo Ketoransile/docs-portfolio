@@ -5,11 +5,8 @@
  **/
 "use client";
 import { cn } from "@/lib/utils";
-import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import {
-  AnimatePresence,
   MotionValue,
-  motion,
   useMotionValue,
   useSpring,
   useTransform,
@@ -45,9 +42,7 @@ const FloatingDockMobile = ({
   const mouseX = useMotionValue(Infinity);
   const pathname = usePathname();
   return (
-    <motion.div
-      // onMouseMove={(e) => mouseX.set(e.pageX)}
-      // onMouseLeave={() => mouseX.set(Infinity)}
+    <div
       className={cn(
         " w-full  flex rounded-none md:hidden h-16 gap-4  sm:gap-10 items-center justify-between  max-md:bg-none bg-neutral-200 dark:bg-neutral-900 p-2  px-4",
         className
@@ -70,7 +65,7 @@ const FloatingDockMobile = ({
           </h1>
         </div>
       ))}
-    </motion.div>
+    </div>
   );
 };
 const FloatingDockDesktop = ({
@@ -82,9 +77,7 @@ const FloatingDockDesktop = ({
 }) => {
   const mouseX = useMotionValue(Infinity);
   return (
-    <motion.div
-      onMouseMove={(e) => mouseX.set(e.pageX)}
-      onMouseLeave={() => mouseX.set(Infinity)}
+    <div
       className={cn(
         "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-full bg-gray-50 dark:bg-neutral-900 px-4 pb-3",
         className
@@ -93,7 +86,7 @@ const FloatingDockDesktop = ({
       {items.map((item) => (
         <IconContainer mouseX={mouseX} key={item.title} {...item} />
       ))}
-    </motion.div>
+    </div>
   );
 };
 
@@ -157,27 +150,22 @@ function IconContainer({
   console.log(pathname);
   return (
     <Link href={href}>
-      <motion.div
+      <div
         ref={ref}
-        style={{ width, height }}
+        style={{ width: width.get(), height: height.get() }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         className="aspect-square rounded-full bg-none  md:bg-gray-200 md:dark:bg-neutral-800 flex items-center justify-center relative"
       >
-        <AnimatePresence>
-          {hovered && (
-            <motion.div
-              initial={{ opacity: 0, y: 10, x: "-50%" }}
-              animate={{ opacity: 1, y: 0, x: "-50%" }}
-              exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="hidden md:flex px-2 py-0.5 whitespace-pre rounded-md bg-gray-100 border dark:bg-neutral-800 dark:border-neutral-900 dark:text-white border-gray-200 text-neutral-700 absolute left-1/2 -translate-x-1/2 -top-8 w-fit text-xs"
-            >
-              {title}
-            </motion.div>
-          )}
-        </AnimatePresence>
-        <motion.div
-          style={{ width: widthIcon, height: heightIcon }}
+        {hovered && (
+          <div
+            className="hidden md:flex px-2 py-0.5 whitespace-pre rounded-md bg-gray-100 border dark:bg-neutral-800 dark:border-neutral-900 dark:text-white border-gray-200 text-neutral-700 absolute left-1/2 -translate-x-1/2 -top-8 w-fit text-xs"
+          >
+            {title}
+          </div>
+        )}
+        <div
+          style={{ width: widthIcon.get(), height: heightIcon.get() }}
           className={`flex items-center justify-center max-md:bg-none ${
             pathname === href
               ? "text-black dark:text-white"
@@ -185,8 +173,8 @@ function IconContainer({
           }`}
         >
           {icon}
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </Link>
   );
 }

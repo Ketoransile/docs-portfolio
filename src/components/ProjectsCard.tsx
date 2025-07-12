@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -27,44 +26,31 @@ import { Project } from "@/app/projects/page";
 
 export function ProjectsCard({ project }: { project: Project }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
-      <motion.div
-        whileHover={{ y: 0 }}
-        className="w-full mx-auto"
-        transition={{ type: "spring", stiffness: 300 }}
-      >
-        <Card className="shadow-xl border border-muted transition-shadow duration-300">
-          <CardHeader className="h-[150px]">
-            <CardTitle className="pb-2 text-center">{project.title}</CardTitle>
-            <CardDescription className="pb-2 text-center">
-              {project.description}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-center justify-center gap-2 max-lg:mt-4">
-              {project.iconLists.map((icon, index) => (
-                <Image
-                  src={icon}
-                  width={100}
-                  height={100}
-                  alt="icon-image"
-                  key={index}
-                  className="w-6 h-6 rounded-full"
-                />
-              ))}
-            </div>
+    <div className="w-full mx-auto">
+      <Card className="shadow-xl border border-muted transition-shadow duration-300">
+        <CardHeader className="h-[150px]">
+          <CardTitle className="pb-2 text-center">{project.title}</CardTitle>
+          <CardDescription className="pb-2 text-center">
+            {project.description}
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center justify-center gap-2 max-lg:mt-4">
+            {project.tech.map((icon, index) => (
+              <Image
+                src={icon}
+                width={100}
+                height={100}
+                alt="tech-icon"
+                key={index}
+                className="w-6 h-6 rounded-full"
+              />
+            ))}
+          </div>
 
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
-              className="mt-6 rounded-lg overflow-hidden"
-            >
-              <Link href={project.liveLink}>
+          <div className="mt-6 rounded-lg overflow-hidden">
+            {project.live && (
+              <Link href={project.live}>
                 <Image
                   src={project.img}
                   width={1000}
@@ -73,10 +59,12 @@ export function ProjectsCard({ project }: { project: Project }) {
                   className="rounded-lg"
                 />
               </Link>
-            </motion.div>
-          </CardContent>
-          <CardFooter className="flex justify-between">
-            <Link href={project.liveLink} target="_blank">
+            )}
+          </div>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          {project.live && (
+            <Link href={project.live} target="_blank">
               <Button
                 variant="outline"
                 className="flex items-center gap-2 hover:scale-105 transition-transform"
@@ -85,15 +73,17 @@ export function ProjectsCard({ project }: { project: Project }) {
                 Live Preview
               </Button>
             </Link>
-            <Link href={project.githubLink} target="_blank">
+          )}
+          {project.github && (
+            <Link href={project.github} target="_blank">
               <Button className="flex items-center gap-2 hover:scale-105 transition-transform">
                 <FaGithub size={16} />
                 Github Link
               </Button>
             </Link>
-          </CardFooter>
-        </Card>
-      </motion.div>
-    </motion.div>
+          )}
+        </CardFooter>
+      </Card>
+    </div>
   );
 }

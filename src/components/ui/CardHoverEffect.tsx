@@ -1,6 +1,5 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -34,23 +33,11 @@ export const HoverEffect = ({
           onMouseLeave={() => setHoveredIndex(null)}
           target="_blank"
         >
-          <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                className="absolute inset-0 h-10 w-10 bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
-                }}
-              />
-            )}
-          </AnimatePresence>
+          {hoveredIndex === idx && (
+            <span
+              className="absolute inset-0 h-10 w-10 bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl transition-opacity duration-150"
+            />
+          )}
           <Card className="flex flex-col w-4 h-4 justify-center items-center bg-neutral-200 dark:bg-black">
             <div className="text-center text-slate-500 dark:text-white">
               {item.title}

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { motion, stagger, useAnimate } from "framer-motion";
+
 import { cn } from "@/lib/utils";
 
 export const TextGenerateEffect = ({
@@ -14,57 +14,28 @@ export const TextGenerateEffect = ({
   filter?: boolean;
   duration?: number;
 }) => {
-  const [scope, animate] = useAnimate();
   let wordsArray = words.split(" ");
-  // useEffect(() => {
-  //   animate(
-  //     "span",
-  //     {
-  //       opacity: 1,
-  //       filter: filter ? "blur(0px)" : "none",
-  //     },
-  //     {
-  //       duration: duration ? duration : 1,
-  //       delay: stagger(0.2),
-  //     }
-  //   );
-  // }, [scope.current]);
-  useEffect(() => {
-    if (!scope.current) return; // ✅ Prevent running when ref is not ready
-
-    animate(
-      "span",
-      {
-        opacity: 1,
-        filter: filter ? "blur(0px)" : "none",
-      },
-      {
-        duration: duration ? duration : 1,
-        delay: stagger(0.2),
-      }
-    );
-  }, [animate, filter, duration, scope]);
   const renderWords = () => {
     return (
-      <motion.div ref={scope}>
+      <div>
         {wordsArray.map((word, idx) => {
           return (
-            <motion.span
+            <span
               key={word + idx}
               className={`${
                 idx > 2
                   ? "text-violet-800 dark:text-purple"
                   : "dark:text-white text-black"
-              } opacity-0`}
+              } opacity-100`}
               style={{
-                filter: filter ? "blur(10px)" : "none",
+                filter: filter ? "blur(0px)" : "none",
               }}
             >
               {word}{" "}
-            </motion.span>
+            </span>
           );
         })}
-      </motion.div>
+      </div>
     );
   };
 
