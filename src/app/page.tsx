@@ -22,7 +22,7 @@ export default function Home() {
             Get Resume <FaExternalLinkAlt className="text-sm sm:text-base" />
           </a>
           <a
-            href="mailto:your@email.com"
+            href="mailto:abdisileshi123@email.com"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold bg-neutral-600 hover:bg-neutral-700 text-foreground text-base sm:text-lg transition-colors shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400"
           >
             <FaEnvelope className="text-base sm:text-lg" /> Send Mail
