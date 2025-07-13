@@ -79,7 +79,7 @@ export default function RootLayout({
               <Header navLinks={navLinks} sectionLinks={sectionLinks} />
               <Sidebar sectionLinks={sectionLinks} />
               <div className="main-bg min-h-screen w-full md:pl-60 ">
-                <main className="pt-14 pb-20 min-h-[80vh] w-full px-2 sm:px-4 md:px-20 lg:px-20" style={{ minHeight: '80vh' }}>
+                <main className="pt-14 pb-20 min-h-[80vh] w-full px-8 sm:px-10 md:px-20 lg:px-20" style={{ minHeight: '80vh' }}>
                   {children}
                 </main> 
                 <Toaster />
