@@ -73,7 +73,7 @@ export function ContactForm() {
         form.reset();
       } else {
         // Show error toast
-        toast.error(
+        toast.error(  
           "Oops! Something went wrong. Please try again later or reach out directly."
         );
       }

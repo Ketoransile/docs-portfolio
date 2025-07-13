@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner"
+
 
 import Link from "next/link";
 import { FaGithub, FaUser, FaProjectDiagram, FaCode, FaBriefcase, FaEnvelope, FaBook, FaChartBar, FaGraduationCap, FaExternalLinkAlt, FaCog } from "react-icons/fa";
@@ -79,12 +81,14 @@ export default function RootLayout({
               <div className="main-bg min-h-screen w-full md:pl-60 ">
                 <main className="pt-14 pb-20 min-h-[80vh] w-full px-2 sm:px-4 md:px-20 lg:px-20" style={{ minHeight: '80vh' }}>
                   {children}
-                </main>
+                </main> 
+                <Toaster />
               </div>
             </div>
            
             <div className="w-px bg-neutral-700 h-full fixed right-0 top-0 z-40" />
           </div>
+         
         </ThemeProvider>
       </body>
     </html>
