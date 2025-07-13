@@ -184,9 +184,9 @@ export default function Contact() {
               <div className="mb-4 font-bold text-lg text-foreground">contact.ts</div>
               <pre className="bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-lg p-6 text-sm text-zinc-200 overflow-x-auto border border-zinc-800 w-full">
                 <code>{`const contactDetails = {
-  name: "Abdi Sileshi",
+  name: "Abdi Sileshi Worku",
   email: "abdisileshi123@gmail.com",
-  mobile: "+251-912345678",
+  mobile: "+251-988734632",
   location: "Addis Ababa, Ethiopia",
   linkedIn: "linkedin.com/in/abdi-sileshi-56710a2a6",
   github: "github.com/Ketoransile",
