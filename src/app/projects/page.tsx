@@ -14,7 +14,7 @@ const projects: Project[] = [
   {
     title: "AI-Powered Resume Analyzer",
     description:
-      "An innovative web application that leverages AI (GPT-4.1) to analyze resumes against job descriptions, providing instant fit scores and actionable feedback to optimize job applications.",
+      "An innovative web application that leverages AI (GPT-5) to analyze resumes against job descriptions, providing instant fit scores and actionable feedback to optimize job applications.",
     img: "/projectsPictures/resumeAnalyzer.png",
     tech: [
       "/techIcons/next.svg",
