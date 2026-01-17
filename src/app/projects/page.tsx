@@ -106,21 +106,21 @@ const projects: Project[] = [
     live: "https://bet-real-estate.vercel.app/",
     github: "https://github.com/Ketoransile/Bet-Real-EstateProject",
   },
-  {
-    title: "YourNote - Note Taking Web App",
-    description:
-      "YourNote is a sleek, responsive web app for creating and managing notes effortlessly, backed by a reliable and robust backend",
-    img: "/projectsPictures/yourNote.png",
-    tech: [
-      "/techIcons/react.svg",
-      "/techIcons/tailwind.svg",
-      "/techIcons/mongodb.svg",
-      "/techIcons/express-js.svg",
-      "/techIcons/javascript.svg",
-    ],
-    live: "https://yournote-3pnr.onrender.com",
-    github: "https://github.com/Ketoransile/YourNote",
-  },
+  // {
+  //   title: "YourNote - Note Taking Web App",
+  //   description:
+  //     "YourNote is a sleek, responsive web app for creating and managing notes effortlessly, backed by a reliable and robust backend",
+  //   img: "/projectsPictures/yourNote.png",
+  //   tech: [
+  //     "/techIcons/react.svg",
+  //     "/techIcons/tailwind.svg",
+  //     "/techIcons/mongodb.svg",
+  //     "/techIcons/express-js.svg",
+  //     "/techIcons/javascript.svg",
+  //   ],
+  //   live: "https://yournote-3pnr.onrender.com",
+  //   github: "https://github.com/Ketoransile/YourNote",
+  // },
 ];
 
 function ProjectCard({ project }: { project: Project }) {
