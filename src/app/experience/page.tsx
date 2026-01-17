@@ -16,9 +16,9 @@ const workExperience: Experience[] = [
     title: "Full Stack Developer",
     company: "Information Network Security Agency",
     type: "Internship",
-    date: "Jul 2025 – Present · 1 mo",
+    date: "Jul 2025 – Sep 2025 · 3 months",
     location: "Addis Ababa, Ethiopia · On-site",
-    description: undefined,
+    description: "Built a microservice-oriented inventory management application with a React frontend during my Software Developer Internship at INSA.",
     skills: "",
     logo: "/insa_logo.png", // Replace with actual logo if available, else use a placeholder
   },
@@ -26,7 +26,7 @@ const workExperience: Experience[] = [
     title: "Full Stack Engineer",
     company: "Ministry of Innovation And Technology - Ethiopia",
     type: "Internship",
-    date: "Jul 2024 – Sep 2024 · 3 mos",
+    date: "Jul 2024 – Sep 2024 · 3 months",
     location: "Addis Ababa, Ethiopia · On-site",
     description:
       "Developed a scalable real estate website using the MERN stack during a two-month internship. Spearheaded both frontend and backend development, enhancing UI/UX with React and Material-UI while optimizing performance and security.",
@@ -60,11 +60,11 @@ function ExperienceCard({ exp }: { exp: Experience }) {
 export default function Experience() {
   return (
     <section className="pt-10 pb-20 min-h-[60vh]">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-10 text-foreground tracking-tight" style={{fontFamily:'var(--font-geist-sans)'}}>Experience</h1>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-10 text-foreground tracking-tight" style={{ fontFamily: 'var(--font-geist-sans)' }}>Experience</h1>
       <div className="w-full">
-      {workExperience.map((exp: Experience) => (
-        <ExperienceCard key={exp.title + exp.company} exp={exp} />
-      ))}
+        {workExperience.map((exp: Experience) => (
+          <ExperienceCard key={exp.title + exp.company} exp={exp} />
+        ))}
       </div>
       <div className="flex justify-between items-center mt-8">
         <a href="/skills" className="flex items-center gap-1 hover:text-blue-600 transition-colors font-semibold text-base sm:text-lg">&lt; Skills & Tools</a>
