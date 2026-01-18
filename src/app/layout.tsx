@@ -45,8 +45,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Abdi's Portfolio",
-  description: "Abdi's portfolio",
+  title: "Abdi Worku | Software Engineer",
+  description: "Portfolio of Abdi Worku, a Software Engineer specializing in full-stack development with Next.js, React, Node.js, and modern web technologies.",
 };
 
 const navLinks = [
