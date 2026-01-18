@@ -124,7 +124,7 @@ function ProjectCard({ project }: { project: Project }) {
             ))}
           </div>
         </div>
-        <div className="flex gap-6 mt-2 text-sm font-semibold">
+        <div className="flex flex-wrap gap-3 sm:gap-6 mt-2 text-sm font-semibold">
           {project.live && (
             <a
               href={project.live}
