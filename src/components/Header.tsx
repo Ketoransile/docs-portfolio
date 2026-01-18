@@ -44,7 +44,7 @@ export default function Header({
         <MobileSidebar sectionLinks={sectionLinks} />
         <Link href="/" className="flex items-center gap-2 sm:gap-8">
           <span className="font-extrabold text-lg sm:text-xl tracking-tight text-foreground flex items-center gap-2">
-            <span className="-ml-2 mr-1 text-base sm:text-lg">↗</span> abdi.dev
+            <span className="-ml-2 mr-1 text-base sm:text-lg">↗</span> Abdi
           </span>
         </Link>
       </div>
