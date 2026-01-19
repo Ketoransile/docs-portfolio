@@ -191,7 +191,6 @@
       radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.03) 0px, transparent 50%),
       radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.03) 0px, transparent 50%),
       radial-gradient(at 0% 100%, rgba(168, 85, 247, 0.03) 0px, transparent 50%);
-    background-attachment: fixed;
   }
 
   .header-bg {
@@ -232,5 +231,10 @@
 
   .animate-pulse-glow {
     animation: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Prevent layout shift on fixed elements when Radix Dialog opens */
+  body[style*="overflow: hidden"] header {
+    padding-right: var(--removed-body-scroll-bar-size, 0px) !important;
   }
 }
