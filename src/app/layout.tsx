@@ -115,10 +115,13 @@ export default function RootLayout({
             <div className="w-px bg-neutral-700 h-full fixed left-2 sm:left-4 md:left-8 lg:left-20 top-0 z-40" />
             <div className="w-px bg-neutral-700 h-full fixed right-2 sm:right-4 md:right-8 lg:right-20 top-0 z-40" />
 
+            {/* Fixed Background Layer - 100vw prevents shift when scrollbar vanishes */}
+            <div className="fixed inset-0 z-[-1] main-bg w-[100vw] h-full pointer-events-none" />
+
             <div className="flex-1 mx-auto w-full max-w-[1600px] relative z-0">
               <Header navLinks={navLinks} sectionLinks={sectionLinks} />
               <Sidebar sectionLinks={sectionLinks} />
-              <div className="main-bg min-h-screen w-full md:pl-60 ">
+              <div className="min-h-screen w-full md:pl-60 ">
                 <main
                   className="pt-14 pb-20 min-h-[80vh] w-full px-8 sm:px-10 md:px-20 lg:px-20"
                   style={{ minHeight: "80vh" }}
