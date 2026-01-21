@@ -27,7 +27,7 @@ const projects: Project[] = [
       "/techIcons/express.svg",
       "/techIcons/openai.svg",
     ],
-    live: "https://quantumcv.vercel.app/",
+    live: "https://elevatcv.vercel.app/",
     github: "https://github.com/Ketoransile/ResumeAnalyzerFrontend",
     backend: "https://github.com/Ketoransile/ResumeAnalyzerBackend",
   },
