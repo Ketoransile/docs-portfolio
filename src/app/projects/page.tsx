@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export interface Project {
   title: string;
@@ -118,8 +118,18 @@ function ProjectCard({ project }: { project: Project }) {
           </p>
           <div className="flex flex-wrap gap-3 mb-6">
             {project.tech.map((icon: string, idx: number) => (
-              <div key={idx} className="bg-neutral-800/50 p-2 rounded-lg border border-neutral-700/50" title={icon.split('/').pop()?.split('.')[0]}>
-                <Image src={icon} alt="tech" width={20} height={20} className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" />
+              <div
+                key={idx}
+                className="bg-neutral-800/50 p-2 rounded-lg border border-neutral-700/50"
+                title={icon.split("/").pop()?.split(".")[0]}
+              >
+                <Image
+                  src={icon}
+                  alt="tech"
+                  width={20}
+                  height={20}
+                  className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity"
+                />
               </div>
             ))}
           </div>
@@ -193,7 +203,10 @@ export default function Projects() {
         Projects
       </h1>
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 text-neutral-400 tracking-tight">
-        A lot of ideas, but <span className="text-blue-400">some are still under construction!</span>
+        A lot of ideas, but{" "}
+        <span className="text-blue-400">
+          some are still under construction!
+        </span>
       </h2>
       <div className="flex flex-col gap-6 mb-16 w-full">
         {projects.map((project: Project) => (
@@ -212,7 +225,11 @@ export default function Projects() {
           <SyntaxHighlighter
             language="javascript"
             style={vscDarkPlus}
-            customStyle={{ margin: 0, padding: '1.5rem', background: '#0a0a0a' }}
+            customStyle={{
+              margin: 0,
+              padding: "1.5rem",
+              background: "#0a0a0a",
+            }}
             showLineNumbers={true}
           >
             {codeString}
@@ -225,13 +242,19 @@ export default function Projects() {
           href="/about"
           className="flex items-center gap-2 text-neutral-400 hover:text-blue-400 transition-colors font-medium text-lg group"
         >
-          <span className="transform group-hover:-translate-x-1 transition-transform">&lt;</span> About Me
+          <span className="transform group-hover:-translate-x-1 transition-transform">
+            &lt;
+          </span>{" "}
+          About Me
         </a>
         <a
           href="/skills"
           className="flex items-center gap-2 text-neutral-400 hover:text-blue-400 transition-colors font-medium text-lg group"
         >
-          Skills & Tools <span className="transform group-hover:translate-x-1 transition-transform">&gt;</span>
+          Skills & Tools{" "}
+          <span className="transform group-hover:translate-x-1 transition-transform">
+            &gt;
+          </span>
         </a>
       </div>
     </section>
