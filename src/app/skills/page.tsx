@@ -19,6 +19,7 @@ const techSkills = [
   { title: "Express.js", icon: "/techIcons/express-js.svg" },
   { title: "MongoDB", icon: "/techIcons/mongodb.svg" },
   { title: "PostgreSQL", icon: "/techIcons/postgresql.svg" },
+  { title: "Supabase", icon: "/techIcons/supabase.svg" },
   { title: "Stripe", icon: "/techIcons/stripe.png" },
   // Mobile & Others
   { title: "React Native", icon: "/techIcons/react.svg" },
