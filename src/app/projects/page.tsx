@@ -14,6 +14,21 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    title: "Reveal - AI Conversion Analyzer",
+    description:
+      "An innovative web application that leverages advanced AI (GPT-5.2) to analyze web page content and copy, predicting conversion rates and providing actionable feedback to optimize user engagement and sales.",
+    img: "/projectsPictures/reveal.png",
+    tech: [
+      "/techIcons/next.svg",
+      "/techIcons/typescript.svg",
+      "/techIcons/tailwind.svg",
+      "/techIcons/supabase.svg",
+      "/techIcons/openai.svg",
+    ],
+    live: "https://reveal-analysis.vercel.app/",
+    github: "https://github.com/Ketoransile/Reveal",
+  },
+  {
     title: "AI-Powered Resume Analyzer",
     description:
       "An innovative web application that leverages AI (GPT-5) to analyze resumes against job descriptions, providing instant fit scores and actionable feedback to optimize job applications.",
@@ -24,7 +39,7 @@ const projects: Project[] = [
       "/techIcons/tailwind.svg",
       "/techIcons/mongodb.svg",
       "/techIcons/node.svg",
-      "/techIcons/express.svg",
+      "/techIcons/express-js.svg",
       "/techIcons/openai.svg",
     ],
     live: "https://elevatcv.vercel.app/",
@@ -57,7 +72,7 @@ const projects: Project[] = [
       "/techIcons/tailwind.svg",
       "/techIcons/mongodb.svg",
       "/techIcons/node.svg",
-      "/techIcons/express.svg",
+      "/techIcons/express-js.svg",
     ],
     live: "https://drivezy-car-rental.vercel.app/",
     github: "https://github.com/Ketoransile/CarRental",
@@ -74,7 +89,7 @@ const projects: Project[] = [
       "/techIcons/typescript.svg",
       "/techIcons/node.svg",
       "/techIcons/javascript.svg",
-      "/techIcons/express.svg",
+      "/techIcons/express-js.svg",
     ],
     live: "https://job-portal-omega-flame.vercel.app/",
     github: "https://github.com/Ketoransile/JobPortal",
