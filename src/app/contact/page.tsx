@@ -70,14 +70,14 @@
 
 //       <Tabs defaultValue="form" className="w-full">
 //         <TabsList className="w-full h-14 mb-6 bg-background border border-border rounded-lg p-1 grid grid-cols-2">
-//           <TabsTrigger 
-//             value="form" 
+//           <TabsTrigger
+//             value="form"
 //             className="relative z-10 rounded-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring data-[state=active]:text-foreground data-[state=active]:shadow-sm h-full"
 //           >
 //             <span className="z-30 relative">Contact Form</span>
 //           </TabsTrigger>
-//           <TabsTrigger 
-//             value="details" 
+//           <TabsTrigger
+//             value="details"
 //             className="relative z-10 rounded-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring data-[state=active]:text-foreground data-[state=active]:shadow-sm h-full"
 //           >
 //             <span className="z-30 relative">My Details</span>
@@ -108,7 +108,7 @@
 
 // function reachOut() {
 //   console.log(
-//     'Reach out to me via email at ' + contactDetails.email + 
+//     'Reach out to me via email at ' + contactDetails.email +
 //     ' or connect on LinkedIn: ' + contactDetails.linkedIn
 //   );
 // }
@@ -131,8 +131,8 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function Contact() {
   const codeString = `const contactDetails = {
@@ -155,9 +155,12 @@ reachOut();`;
 
   return (
     <section className="pt-10 pb-20 min-h-[60vh] w-full max-w-full">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-neutral-400 tracking-tight">Contact</h1>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-neutral-400 tracking-tight">
+        Contact
+      </h1>
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 text-neutral-400 tracking-tight">
-        Get in touch before <span className="text-blue-400">I write another line of code!</span>
+        Get in touch before{" "}
+        <span className="text-blue-400">I write another line of code!</span>
       </h2>
 
       <Tabs defaultValue="form" className="w-full">
@@ -177,7 +180,10 @@ reachOut();`;
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="form" className="focus-visible:outline-none focus:outline-none">
+        <TabsContent
+          value="form"
+          className="focus-visible:outline-none focus:outline-none"
+        >
           <Card className="w-full shadow-2xl border border-neutral-800 bg-neutral-900/40 backdrop-blur-sm rounded-2xl overflow-hidden">
             <CardContent className="p-6 md:p-10">
               <ContactForm />
@@ -185,7 +191,10 @@ reachOut();`;
           </Card>
         </TabsContent>
 
-        <TabsContent value="details" className="focus-visible:outline-none focus:outline-none">
+        <TabsContent
+          value="details"
+          className="focus-visible:outline-none focus:outline-none"
+        >
           <Card className="w-full shadow-2xl border border-neutral-800 bg-neutral-900/40 backdrop-blur-sm rounded-2xl overflow-hidden">
             <CardContent className="p-6 md:p-10">
               <div className="mb-4 font-mono text-sm text-neutral-400 flex items-center gap-2">
@@ -198,7 +207,11 @@ reachOut();`;
                 <SyntaxHighlighter
                   language="javascript"
                   style={vscDarkPlus}
-                  customStyle={{ margin: 0, padding: '1.5rem', background: '#0a0a0a' }}
+                  customStyle={{
+                    margin: 0,
+                    padding: "1.5rem",
+                    background: "#0a0a0a",
+                  }}
                   showLineNumbers={true}
                 >
                   {codeString}
@@ -210,8 +223,14 @@ reachOut();`;
       </Tabs>
 
       <div className="flex justify-between items-center mt-16 pt-8 border-t border-neutral-800">
-        <a href="/education" className="flex items-center gap-2 text-neutral-400 hover:text-blue-400 transition-colors font-medium text-lg group">
-          <span className="transform group-hover:-translate-x-1 transition-transform">&lt;</span> Education
+        <a
+          href="/education"
+          className="flex items-center gap-2 text-neutral-400 hover:text-blue-400 transition-colors font-medium text-lg group"
+        >
+          <span className="transform group-hover:-translate-x-1 transition-transform">
+            &lt;
+          </span>{" "}
+          Education
         </a>
         <div></div>
       </div>
